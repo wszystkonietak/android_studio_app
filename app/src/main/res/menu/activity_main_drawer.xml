@@ -13,8 +13,52 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_blank"
+            android:title="blank" />
+        <item
+            android:id="@+id/nav_zadanie1"
+            android:title="zadanie 1" />
+        <item
+            android:id="@+id/nav_zadanie2"
+            android:title="zadanie 2" />
+        <item
+            android:id="@+id/nav_zadanie3"
+            android:title="zadanie 3" />
+        <item
+            android:id="@+id/nav_zadanie4"
+            android:title="zadanie 4" />
+        <item
+            android:id="@+id/nav_zadanie5"
+            android:title="zadanie 5" />
+        <item
+            android:id="@+id/nav_zadanie6"
+            android:title="zadanie 6" />
+        <item
+            android:id="@+id/nav_zadanie7"
+            android:title="zadanie 7" />
+        <item
+            android:id="@+id/nav_zadanie8"
+            android:title="zadanie 8" />
+        <item
+            android:id="@+id/nav_zadanie9"
+            android:title="zadanie 9" />
+        <item
+            android:id="@+id/nav_zadanie10"
+            android:title="zadanie 10" />
+        <item
+            android:id="@+id/nav_zadanie11"
+            android:title="zadanie 11" />
+        <item
+            android:id="@+id/nav_zadanie12"
+            android:title="zadanie 12" />
+        <item
+            android:id="@+id/nav_zadanie13"
+            android:title="zadanie 13" />
+        <item
+            android:id="@+id/nav_zadanie14"
+            android:title="zadanie 14" />
+        <item
+            android:id="@+id/nav_zadanie15"
+            android:title="zadanie 15" />
     </group>
 </menu>
