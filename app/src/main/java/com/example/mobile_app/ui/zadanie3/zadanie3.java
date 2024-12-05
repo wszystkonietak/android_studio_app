@@ -1,7 +1,13 @@
 package com.example.mobile_app.ui.zadanie3;
 
+import static com.example.mobile_app.databinding.FragmentSlideshowBinding.inflate;
+
+import static java.security.AccessController.getContext;
+
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -12,8 +18,10 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -29,7 +37,7 @@ import java.util.ArrayList;
 public class zadanie3 extends Fragment {
 
     private com.example.mobile_app.databinding.FragmentZadanie3Binding binding;
-
+    public Zadanie3ViewModel mViewModel;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         Zadanie3ViewModel zadanie3ViewModel =
@@ -40,13 +48,16 @@ public class zadanie3 extends Fragment {
         ListView list = binding.listView;
         EditText text = binding.editText;
         Button button = binding.button;
-        ArrayList<String> myStringArray1 = new ArrayList<String>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, myStringArray1);
-        list.setAdapter(adapter);
+        mViewModel = new ViewModelProvider(requireActivity()).get(Zadanie3ViewModel.class);
+
+        MyCustomAdapter myCustomAdapter = new MyCustomAdapter(mViewModel.myStringArray1, getContext());
+        list.setAdapter(myCustomAdapter);
         button.setOnClickListener(new View.OnClickListener() {@Override
         public void onClick(View view) {
-            myStringArray1.add(text.getText().toString());
-            adapter.notifyDataSetChanged();
+            mViewModel.myStringArray1.add(text.getText().toString());
+
+            myCustomAdapter.notifyDataSetChanged();
+            text.setText("");
         }
         });
 
@@ -55,8 +66,8 @@ public class zadanie3 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                myStringArray1.remove(position);
-                adapter.notifyDataSetChanged();
+                mViewModel.myStringArray1.remove(position);
+                myCustomAdapter.notifyDataSetChanged();
             }
         });
 

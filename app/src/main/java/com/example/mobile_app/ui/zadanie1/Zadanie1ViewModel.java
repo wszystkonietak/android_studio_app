@@ -3,7 +3,6 @@ package com.example.mobile_app.ui.zadanie1;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 public class Zadanie1ViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
